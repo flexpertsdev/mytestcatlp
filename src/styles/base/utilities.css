@@ -1,0 +1,86 @@
+/**
+ * SEMANTIC UTILITY CLASSES
+ * Layout primitives for consistent spacing
+ */
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: var(--width-7xl);
+  margin-inline: auto;
+  padding-inline: var(--padding-inline);
+}
+
+.container-narrow { max-width: var(--width-4xl); }
+.container-wide { max-width: var(--width-full); }
+
+/* Section spacing */
+.section {
+  padding-block: var(--space-section-md);
+}
+
+.section-sm { padding-block: var(--space-section-sm); }
+.section-lg { padding-block: var(--space-section-lg); }
+.section-xl { padding-block: var(--space-section-xl); }
+
+/* Flow - vertical rhythm */
+.flow > * + * {
+  margin-top: var(--flow-space, 1em);
+}
+
+.flow-sm { --flow-space: var(--space-4); }
+.flow-md { --flow-space: var(--space-6); }
+.flow-lg { --flow-space: var(--space-8); }
+
+/* Stack - explicit spacing */
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--stack-gap, var(--space-4));
+}
+
+.stack-sm { --stack-gap: var(--space-2); }
+.stack-md { --stack-gap: var(--space-6); }
+.stack-lg { --stack-gap: var(--space-8); }
+.stack-xl { --stack-gap: var(--space-12); }
+
+/* Cluster - horizontal grouping */
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--cluster-gap, var(--space-4));
+  align-items: center;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  gap: var(--grid-gap, var(--space-6));
+}
+
+.grid-auto-fit {
+  grid-template-columns: repeat(auto-fit, minmax(min(var(--grid-min, 250px), 100%), 1fr));
+}
+
+.grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+
+@media (min-width: 768px) {
+  .md\:grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+  .md\:grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (min-width: 1024px) {
+  .lg\:grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+  .lg\:grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* Center content */
+.center-content {
+  text-align: center;
+}
+
+.center-content > * {
+  margin-inline: auto;
+}

@@ -1,0 +1,88 @@
+/**
+ * COLOR SYSTEM - OKLCH
+ * Edit --hue-brand and --hue-accent to customize brand colors
+ *
+ * DARK MODE DECISION:
+ * This boilerplate includes automatic dark mode support that responds
+ * to the user's operating system preference (prefers-color-scheme: dark).
+ *
+ * When customizing for a project, decide:
+ * 1. Keep dark mode if it fits the brand (tech, tools, apps, developer-focused)
+ * 2. Remove dark mode if light-only is better (weddings, luxury, children's brands)
+ * 3. Or customize both modes for the brand
+ *
+ * To remove: Delete the @media (prefers-color-scheme: dark) block below
+ * To keep: Customize the dark mode color values to match your brand
+ */
+
+:root {
+  /* Brand Color - CUSTOMIZE THIS */
+  --hue-brand: 220;  /* A calm, professional blue */
+  --saturation-brand: 0.18;
+
+  /* Accent Color - CUSTOMIZE THIS */
+  --hue-accent: 260; /* A subtle, modern purple */
+  --saturation-accent: 0.12;
+
+  /* Brand Scale (light to dark) */
+  --color-brand-50: oklch(98% var(--saturation-brand) var(--hue-brand));
+  --color-brand-100: oklch(95% var(--saturation-brand) var(--hue-brand));
+  --color-brand-200: oklch(90% var(--saturation-brand) var(--hue-brand));
+  --color-brand-300: oklch(80% var(--saturation-brand) var(--hue-brand));
+  --color-brand-400: oklch(65% var(--saturation-brand) var(--hue-brand));
+  --color-brand-500: oklch(50% var(--saturation-brand) var(--hue-brand));
+  --color-brand-600: oklch(40% var(--saturation-brand) var(--hue-brand));
+  --color-brand-700: oklch(30% var(--saturation-brand) var(--hue-brand));
+  --color-brand-800: oklch(20% var(--saturation-brand) var(--hue-brand));
+  --color-brand-900: oklch(12% var(--saturation-brand) var(--hue-brand));
+
+  /* Neutral Scale (grays) */
+  --color-neutral-50: oklch(98% 0.01 var(--hue-brand));
+  --color-neutral-100: oklch(95% 0.01 var(--hue-brand));
+  --color-neutral-200: oklch(90% 0.01 var(--hue-brand));
+  --color-neutral-300: oklch(80% 0.01 var(--hue-brand));
+  --color-neutral-400: oklch(65% 0.01 var(--hue-brand));
+  --color-neutral-500: oklch(50% 0.01 var(--hue-brand));
+  --color-neutral-600: oklch(40% 0.01 var(--hue-brand));
+  --color-neutral-700: oklch(30% 0.01 var(--hue-brand));
+  --color-neutral-800: oklch(20% 0.01 var(--hue-brand));
+  --color-neutral-900: oklch(12% 0.01 var(--hue-brand));
+
+  /* Semantic Colors */
+  --color-primary: var(--color-brand-600);
+  --color-primary-hover: var(--color-brand-700);
+  --color-primary-active: var(--color-brand-800);
+
+  --color-accent: oklch(55% var(--saturation-accent) var(--hue-accent));
+  --color-accent-hover: oklch(45% var(--saturation-accent) var(--hue-accent));
+
+  /* UI Colors */
+  --color-bg: var(--color-neutral-50);
+  --color-surface: white;
+  --color-text: var(--color-neutral-900);
+  --color-text-muted: var(--color-neutral-600);
+  --color-border: var(--color-neutral-200);
+
+  /* Status Colors */
+  --color-success: oklch(55% 0.15 145);
+  --color-warning: oklch(65% 0.15 75);
+  --color-error: oklch(55% 0.20 25);
+  --color-info: oklch(60% 0.15 230);
+}
+
+/* Automatic Dark Mode - Customized for the brand */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: var(--color-neutral-900);
+    --color-surface: var(--color-neutral-800);
+    --color-text: var(--color-neutral-50);
+    --color-text-muted: var(--color-neutral-400);
+    --color-border: var(--color-neutral-700);
+
+    --color-primary: var(--color-brand-400);
+    --color-primary-hover: var(--color-brand-300);
+
+    --color-accent: oklch(65% var(--saturation-accent) var(--hue-accent));
+    --color-accent-hover: oklch(75% var(--saturation-accent) var(--hue-accent));
+  }
+}

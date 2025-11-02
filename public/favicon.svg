@@ -1,0 +1,37 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 
+    Astro Kickstart Favicon
+    - Modern, abstract orbit design
+    - Supports automatic light/dark mode switching
+  -->
+  <style>
+    .icon-shape {
+      /* Light mode color: A vibrant, professional blue */
+      color: #2563eb;
+      transition: color 0.3s ease;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .icon-shape {
+        /* Dark mode color: A lighter blue for better contrast on dark UI */
+        color: #60a5fa;
+      }
+    }
+  </style>
+  
+  <g class="icon-shape">
+    <!-- Central celestial body (the "star") -->
+    <circle cx="16" cy="16" r="4.5" fill="currentColor"/>
+    
+    <!-- Elliptical orbit path -->
+    <ellipse 
+      cx="16" 
+      cy="16" 
+      rx="13" 
+      ry="6" 
+      stroke="currentColor" 
+      stroke-width="2" 
+      transform="rotate(-30 16 16)"
+    />
+  </g>
+</svg>

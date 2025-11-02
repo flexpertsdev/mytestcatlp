@@ -1,0 +1,37 @@
+/* Import design tokens */
+@import './tokens/colors.css';
+@import './tokens/typography.css';
+@import './tokens/spacing.css';
+@import './tokens/animations.css';
+
+/* Import base styles */
+@import './base/reset.css';
+@import './base/utilities.css';
+
+/* Skip link for accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  padding: var(--space-2);
+  text-decoration: none;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Scroll animations */
+[data-animate] {
+  opacity: 0;
+  transform: translateY(2rem);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+[data-animate].animated {
+  opacity: 1;
+  transform: translateY(0);
+}
